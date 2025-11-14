@@ -439,16 +439,16 @@ def main_panel(df: pd.DataFrame, geojson: Dict) -> None:
 
         st.markdown("### Burned area trend")
         fig_line = create_line_chart(df)
-        st.plotly_chart(fig_line, use_container_width=True)
+        st.plotly_chart(fig_line, width='stretch')
 
         st.markdown("### Resources trend")
         fig_stack = create_stacked_bar(df)
-        st.plotly_chart(fig_stack, use_container_width=True)
+        st.plotly_chart(fig_stack, width='stretch')
 
     with col2:
         st.markdown("### Top affected provinces")
         fig_top = create_top_provinces_chart(df, top_n=10)
-        st.plotly_chart(fig_top, use_container_width=True)
+        st.plotly_chart(fig_top, width='stretch')
 
         info_expander()
 
