@@ -224,7 +224,7 @@ def create_choropleth_map(df: pd.DataFrame, geojson: Dict) -> Optional[folium.Ma
     m = folium.Map(location=[40.4168, -3.7038], zoom_start=6, max_zoom=7, min_zoom=5)
     
     Fullscreen(
-        position="topleft",
+        position="bottomright",
         title="Full screen",
         title_cancel="Exit Full Screen"
     ).add_to(m)
