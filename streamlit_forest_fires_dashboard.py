@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Dict, Tuple, Optional
 
 import folium
+from folium.plugins import Fullscreen
 import pandas as pd
 import plotly.express as px
 import streamlit as st
@@ -221,6 +222,12 @@ def create_choropleth_map(df: pd.DataFrame, geojson: Dict) -> Optional[folium.Ma
 
     # Base map centered on mainland Spain
     m = folium.Map(location=[40.4168, -3.7038], zoom_start=6, max_zoom=7, min_zoom=5)
+    
+    Fullscreen(
+        position="topleft",
+        title="Full screen",
+        title_cancel="Exit Full Screen"
+    ).add_to(m)
 
     # Limit bounds (include Canary Islands and Balearic area roughly)
     m.fit_bounds([[26.5, -18.5], [44.5, 5.5]])
